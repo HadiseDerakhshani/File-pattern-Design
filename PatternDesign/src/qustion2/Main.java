@@ -7,10 +7,10 @@ import qustion2.imageReader.decorator.JpegDecorator;
 
 public class Main {
     public static void main(String[] args) {
-    User user=new User("HADISEH","png,jpeg,gif");
-        ImageReader imageReader=new PngImageReader();
-        imageReader=new JpegDecorator(imageReader);
-        imageReader=new GifDecorator(imageReader);
+        User user = new User("HADISEH", "png,jpeg,gif");
+        ImageReader imageReader = new PngImageReader();
+        imageReader = new JpegDecorator(imageReader);
+        imageReader = new GifDecorator(imageReader);
         imageReader.showImage(user.getName());
     }
 }

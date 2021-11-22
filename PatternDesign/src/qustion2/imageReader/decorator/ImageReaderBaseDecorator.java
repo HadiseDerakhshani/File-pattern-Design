@@ -11,6 +11,6 @@ public class ImageReaderBaseDecorator implements ImageReader {
 
     @Override
     public void showImage(String name) {
-imageReader.showImage(name);
+        imageReader.showImage(name);
     }
 }

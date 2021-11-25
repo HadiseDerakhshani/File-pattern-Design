@@ -1,5 +1,13 @@
+import dao.RatingDao;
+
+import java.sql.SQLException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        RatingDao ratingDao = new RatingDao();
+        ratingDao.insertToTable();
+        System.out.println("-----------------------");
+        ratingDao.getPrimaryKey().stream().forEach(System.out::println);
       /*  Course Name,Student Name,Timestamp,Rating,Comment
         "Java Servlet JSP and Hibernate",Praveen ,2019-07-31
         19:10:13,5.0,"excellent teaching "

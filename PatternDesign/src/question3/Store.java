@@ -1,8 +1,10 @@
 package question3;
 
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.List;
-
+@Data
 public class Store {
     private Product product;
     private List<Alert> listAlert = new ArrayList<>();
@@ -11,7 +13,7 @@ public class Store {
         this.product = product;
     }
 
-    public void addListAlert(Alert alert) {
+    public synchronized void addListAlert(Alert alert) {
         listAlert.add(alert);
     }
 
@@ -20,17 +22,33 @@ public class Store {
     }
 
     public void active() {
-        Thread thread = new Thread(() -> {
+
+       /* Thread thread = new Thread(() -> {
             while (true) {
                 if (!product.getProductStatus().equals(ProductStatus.UNAVAILABLE)) {
                     for (Alert alert : listAlert) {
                         alert.alert();
                     }
                     listAlert = new ArrayList<>();
+                  //  break;
                 }
             }
         });
-        thread.start();
+        thread.setDaemon(true);
+        thread.start();*/
 
     }
 }
+    /*Thread thread = new Thread(() -> {
+        while (true) {
+            if (!product.getProductStatus().equals(ProductStatus.UNAVAILABLE)) {
+                for (Alert alert : listAlert) {
+                    alert.alert();
+                }
+                listAlert = new ArrayList<>();
+                //  break;
+            }
+        }
+    });
+        thread.setDaemon(true);
+                thread.start();*/

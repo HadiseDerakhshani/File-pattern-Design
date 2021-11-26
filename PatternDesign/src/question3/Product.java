@@ -10,11 +10,6 @@ public class Product {
     private ProductStatus productStatus;
     private Store store;
 
-   /* public Product() {
-       setProductStatus(ProductStatus.AVAILABLE);
-       store= new Store(this);
-       store.active();
-    }*/
 
     public Product(String pName, double price, int number) {
         this.pName = pName;
@@ -22,11 +17,9 @@ public class Product {
         this.number = number;
         setProductStatus(ProductStatus.AVAILABLE);
         store = new Store(this);
-        store.active();
     }
 
-    public void offPrice(double amount) {//method for discount ,darsad of discount is entered parameter;
-
+    public void offPrice(double amount) {
         this.price = this.price - (this.price * amount);
         this.setProductStatus(ProductStatus.DISCOUNT);
     }

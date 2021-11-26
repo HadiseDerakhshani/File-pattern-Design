@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Data
 public class Store {
     private Product product;
@@ -21,34 +22,4 @@ public class Store {
         listAlert.remove(0);
     }
 
-    public void active() {
-
-       /* Thread thread = new Thread(() -> {
-            while (true) {
-                if (!product.getProductStatus().equals(ProductStatus.UNAVAILABLE)) {
-                    for (Alert alert : listAlert) {
-                        alert.alert();
-                    }
-                    listAlert = new ArrayList<>();
-                  //  break;
-                }
-            }
-        });
-        thread.setDaemon(true);
-        thread.start();*/
-
-    }
 }
-    /*Thread thread = new Thread(() -> {
-        while (true) {
-            if (!product.getProductStatus().equals(ProductStatus.UNAVAILABLE)) {
-                for (Alert alert : listAlert) {
-                    alert.alert();
-                }
-                listAlert = new ArrayList<>();
-                //  break;
-            }
-        }
-    });
-        thread.setDaemon(true);
-                thread.start();*/
